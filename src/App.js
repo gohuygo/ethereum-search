@@ -4,30 +4,21 @@ import './App.css';
 import Web3 from 'web3';
 import _ from 'lodash';
 
-// var ETHEREUM_CLIENT = new Web3()
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
 
-//TODO: peopleContractABI and peopleContractAddress should be input values\
-
-//People.deployed().then(a=>JSON.stringify(a.abi))
-// var peopleContractABI = [{"constant":true,"inputs":[],"name":"getPeople","outputs":[{"name":"","type":"bytes32[]"},{"name":"","type":"bytes32[]"},{"name":"","type":"uint256[]"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_firstName","type":"bytes32"},{"name":"_lastName","type":"bytes32"},{"name":"_age","type":"uint256"}],"name":"addPerson","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"people","outputs":[{"name":"firstName","type":"bytes32"},{"name":"lastName","type":"bytes32"},{"name":"age","type":"uint256"}],"payable":false,"type":"function"}]
-
-//People.deployed().then(a=>a.address)
-// var bittrex = '0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98'
-// var bittrexAccounts = ETHEREUM_CLIENT.fromWei(ETHEREUM_CLIENT.eth.getBalance(bittrex));
+var bittrex = '0x3c5167c93dbaa26f945fba324dc0f7e07c9f18a8'
+var accountBalance = web3.fromWei(web3.eth.getBalance(bittrex), 'ether');
 
 class App extends Component {
   constructor(props) {
-    console.warning("TEST?!")
-
     super(props)
   }
   componentWillMount(){
-    // console.log(bittrexAccounts)
+    console.log(bittrex)
+    console.log(accountBalance.toString())
   }
   render() {
-    console.log("WTF")
-    // console.log(bittrex)
-    // console.log(bittrexAccounts)
+
 
     return (
       <div className="App">
