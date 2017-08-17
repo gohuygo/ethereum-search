@@ -4,18 +4,18 @@ import './App.css';
 import Web3 from 'web3';
 import _ from 'lodash';
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
-
-var bittrex = '0x3c5167c93dbaa26f945fba324dc0f7e07c9f18a8'
-var accountBalance = web3.fromWei(web3.eth.getBalance(bittrex), 'ether');
 
 class App extends Component {
   constructor(props) {
     super(props)
+
+    var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
+    this.address = '0x3c5167c93dbaa26f945fba324dc0f7e07c9f18a8'
+    this.accountBalance = web3.fromWei(web3.eth.getBalance(this.address), 'ether');
   }
   componentWillMount(){
-    console.log(bittrex)
-    console.log(accountBalance.toString())
+    console.log(this.address)
+    console.log(this.accountBalance.toString())
   }
   render() {
     return (
@@ -27,11 +27,6 @@ class App extends Component {
         <div className="App-Content">
           <table>
             <thead>
-              <tr>
-                <th> First Name </th>
-                <th> Last Name </th>
-                <th> Age </th>
-              </tr>
             </thead>
             <tbody>
             </tbody>
