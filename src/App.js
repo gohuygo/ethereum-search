@@ -18,8 +18,6 @@ class App extends Component {
     console.log(accountBalance.toString())
   }
   render() {
-
-
     return (
       <div className="App">
         <div className="App-header">
