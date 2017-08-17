@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>My first dApp</h2>
+          <h2>EtherSearch</h2>
         </div>
         <div className="App-Content">
           <table>
