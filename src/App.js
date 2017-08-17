@@ -9,10 +9,11 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
+    var web3 = new Web3(new Web3.providers.HttpProvider());
 
     // TODO: This should be a form input
-    this.address = '0x3c5167c93dbaa26f945fba324dc0f7e07c9f18a8'
+    // Bittrex Address
+    this.address = '0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98'
     this.accountBalance = web3.fromWei(web3.eth.getBalance(this.address), 'ether');
   }
   componentWillMount(){
