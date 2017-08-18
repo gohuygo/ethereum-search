@@ -25,7 +25,7 @@ class App extends Component {
         </div>
         <form>
           <label>Eth Address: </label>
-          <input type="text" name="name" onKeyUp={this.performSearch} />
+          <input type="text" name="name" onBlur={this.performSearch} />
         </form>
         <div className='accountBalance'>
           <p>{this.state.accountBalance}</p>
