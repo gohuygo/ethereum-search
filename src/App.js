@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Web3 from 'web3';
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/ethersearch'));
     this.state = { accountBalance: '0' }
-
-    this.performSearch = this.performSearch.bind(this)
   }
-  performSearch(e){
+  performSearch = (e) => {
     var address = e.target.value
     var accountBalance = this.web3.fromWei(this.web3.eth.getBalance(address), 'ether')
     this.setState({
