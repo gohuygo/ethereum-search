@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Web3 from 'web3';
-import _ from 'lodash';
-
-
 class App extends Component {
   constructor(props) {
     super(props)
+    this.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/ethersearch'));
+    this.state = { accountBalance: '0' }
 
-    var web3 = new Web3(new Web3.providers.HttpProvider());
-
-    // TODO: This should be a form input
-    // Bittrex Address
-    this.address = '0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98'
-    this.accountBalance = web3.fromWei(web3.eth.getBalance(this.address), 'ether');
+    this.performSearch = this.performSearch.bind(this)
   }
-  componentWillMount(){
-    console.log(this.address)
-    console.log(this.accountBalance.toString())
+  performSearch(e){
+    var address = e.target.value
+    var accountBalance = this.web3.fromWei(this.web3.eth.getBalance(address), 'ether')
+    this.setState({
+      accountBalance: accountBalance.toString()
+    })
   }
   render() {
     return (
@@ -27,7 +24,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>EtherSearch</h2>
         </div>
-        <p> Search Bar Here? </p>
+        <form>
+          <label>Eth Address: </label>
+          <input type="text" name="name" onKeyUp={this.performSearch} />
+        </form>
+        <div className='accountBalance'>
+          <p>{this.state.accountBalance}</p>
+        </div>
       </div>
     );
   }
