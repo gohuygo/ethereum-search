@@ -17,13 +17,11 @@ class App extends Component {
     var validator = new ValidateEtherAddress(address, this.web3)
 
     if (validator.call()) {
-      console.log("VALIDATED")
       var accountBalance = this.web3.fromWei(this.web3.eth.getBalance(address), 'ether')
       this.setState({
         accountBalance: accountBalance.toString()
       })
     } else {
-      console.log("NOT VALID")
       this.setState({
         accountBalance: "Invalid Account"
       })
