@@ -1,24 +1,184 @@
-.App {
+@font-face {
+  font-family: Bebas;
+  src: url('./fonts/bebas.ttf');
+}
+
+@font-face {
+  font-family: SourceSansPro-Light;
+  src: url('./fonts/SourceSansPro-Light.otf');
+}
+
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('./fonts/SourceSansPro-Regular.otf');
+}
+
+.custom-bolded{
+  font-family: SourceSansPro-Regular !important;
+}
+
+html *{
+  font-family: SourceSansPro-Light, 'Helvetica', sans-serif;
+  font-weight: 200;
+  color: #515151;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.mouse-cursor{
+  cursor: pointer;
+}
+
+.body-container {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+
+.default-flashy-button{
+  background-image: linear-gradient(to right, #e052a0,#f15c41);
+  cursor: pointer;
+  border-radius: 3px;
+  color: #fff !important;
+  font-size: 12px;
+  padding: 5px 20px;
+}
+
+.subscribe-button{
+  display: inline-block;
+  float: right;
+}
+
+.login-button{
+  display: inline-block;
+  float: right;
+}
+
+.default-flashy-button:hover{
+  background-image: linear-gradient(to right, #3ec7e0,#526bf4);
+}
+
+.subscription-form-container{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.brand {
+  font-family: Bebas;
+  font-size: 24px;
+  color: #526373;
+  position:relative;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.nav-container {
+  /*HACK Width defined in media query*/
+
+  margin: auto;
+  padding: 14px;
+  height: 58px;
+  border-bottom: #FBF8E8 1px solid !important;
 }
 
-.App-intro {
-  font-size: large;
+.product-image {
+  max-width:100%;
+  height: 125px;
+  margin: auto;
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.product-image-container{
+  background-color: #f7f7f7;
+  border-top: 1px solid #f7f7f7;
+}
+
+.product-text-info-container{
+  border: 1px solid #f7f7f7;
+  border-top: none;
+  padding: 0 5px;
+
+}
+
+.product-description {
+  height: 30px;
+  font-size: 13px;
+  width: 100%;
+}
+
+
+.hide-overflow {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  width:100%;
+  display:block;
+}
+
+.subscribe-text {
+  padding-top: 20px;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.product-container {
+  padding: 5px 20px;
+}
+
+.product-container a{
+  color: #515151;
+}
+
+.footer{
+  width: 100%;
+}
+
+.footer-container {
+  margin: auto;
+  width: 700px;
+  padding-top: 40px;
+  margin-bottom: 10px;
+}
+
+/* Custom Small Devices, Phones */
+@media only screen and (max-width : 479px) {
+  .nav-container {
+    width: 330px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .nav-container {
+    width: 400px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .nav-container {
+    width: 750px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .nav-container {
+    width: 800px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .nav-container {
+    width: 1000px;
+  }
 }

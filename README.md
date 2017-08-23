@@ -4,7 +4,7 @@ Install:
 `npm install`
 
 Start React App:
-`npm server`
+`npm start`
 
 Start Testnet:
 `testrpc`
