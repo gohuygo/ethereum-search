@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
-import ValidateEtherAddress from '../src/components/utils/ValidateEtherAddress'
 
 import './App.css';
 
@@ -14,9 +13,8 @@ class App extends Component {
 
   performSearch = (e) => {
     var address   = e.target.value
-    var validator = new ValidateEtherAddress(address, this.web3)
 
-    if (validator.call()) {
+    if (this.web3.isAddress(address)) {
       var accountBalance = this.web3.fromWei(this.web3.eth.getBalance(address), 'ether')
       this.setState({
         accountBalance: accountBalance.toString()

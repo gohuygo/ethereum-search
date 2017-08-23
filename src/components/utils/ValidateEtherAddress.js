@@ -1,7 +1,7 @@
 export default class ValidateEtherAddress{
   constructor(address, web3) {
     this.address = address
-    this.web3 = web3
+    this.web3    = web3
   }
 
   call() {
